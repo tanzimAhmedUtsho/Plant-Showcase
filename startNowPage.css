@@ -1,0 +1,156 @@
+/* গ্লোবাল সেটিংস */
+:root {
+  --primary-color: #2d6a4f;
+  --secondary-color: #40916c;
+  --bg-light: #f0f4f2;
+  --text-dark: #1b4332;
+  --white: #ffffff;
+  --accent-light: #d8f3dc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hind Siliguri", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* নেভিগেশন স্টাইল */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 10%;
+  background: var(--white);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.logo span {
+  color: var(--secondary-color);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+  align-items: center;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.nav-btn {
+  background: var(--primary-color);
+  color: white !important;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* হেডার সেকশন */
+.start-header {
+  text-align: center;
+  padding: 80px 10%;
+  background: linear-gradient(135deg, var(--accent-light) 0%, #ffffff 100%);
+}
+
+.start-header h1 {
+  font-size: 42px;
+  margin-bottom: 15px;
+}
+.start-header h1 span {
+  color: var(--primary-color);
+}
+
+/* স্টেপ কার্ড স্টাইল */
+.steps-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 60px 10%;
+}
+
+.step-card {
+  background: var(--white);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  position: relative;
+  transition: 0.3s;
+  overflow: hidden;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+}
+
+.step-number {
+  font-size: 60px;
+  font-weight: 800;
+  color: rgba(45, 106, 79, 0.08);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.step-card h2 {
+  color: var(--primary-color);
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+/* কল টু অ্যাকশন ব্যানার */
+.cta-banner {
+  text-align: center;
+  padding: 60px 10%;
+  background: var(--primary-color);
+  color: white;
+  margin: 40px 10%;
+  border-radius: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 40px;
+  background: white;
+  color: var(--primary-color);
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.cta-button:hover {
+  background: var(--accent-light);
+}
+
+/* ফুটার */
+footer {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background: #fff;
+  margin-top: 40px;
+}
