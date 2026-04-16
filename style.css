@@ -1,0 +1,247 @@
+/* --- মেইন সেটআপ ও ভেরিয়েবল --- */
+:root {
+  --primary: #2d6a4f;
+  --secondary: #40916c;
+  --accent: #95d5b2;
+  --text: #1b4332;
+  --white: #ffffff;
+  --shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hind Siliguri", "Poppins", sans-serif;
+  background-color: #f0f4f2;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* --- নভিগেশন --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.logo span {
+  color: var(--secondary);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary);
+}
+
+.nav-btn {
+  background: var(--primary);
+  color: white !important;
+  padding: 10px 25px;
+  border-radius: 50px;
+}
+
+/* --- হিরো সেকশন --- */
+.hero-section {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(135deg, #d8f3dc 0%, #ffffff 100%);
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: clamp(32px, 5vw, 55px);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-text h1 span {
+  color: var(--primary);
+}
+
+.hero-text p {
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto 30px;
+}
+
+/* --- সার্চ বার --- */
+.search-container {
+  background: white;
+  padding: 5px;
+  border-radius: 50px;
+  display: flex;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-container input {
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  flex: 1;
+  outline: none;
+}
+
+.search-container button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-container button:hover {
+  background: var(--secondary);
+}
+
+/* --- প্ল্যান্ট কালেকশন কন্টেইনার --- */
+.plant-container {
+  padding: 80px 10%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  font-size: 32px;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+/* --- গ্রিড লেআউট --- */
+.grid-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+/* --- কার্ড স্টাইল --- */
+.glass-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+  border: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--accent);
+}
+
+.badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #ff7b00;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 12px;
+  z-index: 10;
+}
+
+.glass-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.glass-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-info {
+  padding: 20px;
+  text-align: left;
+  flex-grow: 1;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  color: #1e4d2b;
+  margin-bottom: 8px;
+}
+
+.card-info p {
+  color: #666;
+  font-size: 14px;
+  height: 40px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+/* --- বাটন স্টাইল --- */
+.buy-btn {
+  width: 100%;
+  padding: 12px;
+  border: 1.5px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buy-btn:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* --- ফুটার --- */
+footer {
+  text-align: center;
+  padding: 50px;
+  background: #fdfdfd;
+  border-top: 1px solid #eee;
+  margin-top: 50px;
+}
