@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>অর্ডার ও মতামত | সবুজ আবাহন</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .checkout-container {
+        padding: 60px 10%;
+        background: #f0f7f4;
+        min-height: 90vh;
+      }
+      .checkout-card {
+        background: white;
+        border-radius: 25px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        max-width: 900px;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .tabs-header {
+        display: flex;
+        background: #eee;
+      }
+      .tab-btn {
+        flex: 1;
+        padding: 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        font-family: "Hind Siliguri";
+        font-weight: 600;
+        color: #555;
+        transition: 0.3s;
+      }
+      .tab-btn.active {
+        background: white;
+        color: var(--primary);
+        border-top: 4px solid var(--primary);
+      }
+      .tab-content {
+        display: none;
+        padding: 40px;
+      }
+      .tab-content.active {
+        display: block;
+        animation: slideUp 0.4s ease;
+      }
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      .input-box {
+        margin-bottom: 20px;
+      }
+      .input-box label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--primary);
+      }
+      .input-box input,
+      .input-box textarea,
+      .input-box select {
+        width: 100%;
+        padding: 12px;
+        border: 1.5px solid #e1e1e1;
+        border-radius: 12px;
+        outline: none;
+        transition: 0.3s;
+      }
+      .input-box input:focus {
+        border-color: var(--primary);
+      }
+      .btn-submit {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-weight: 600;
+        width: 100%;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">সবুজ এর <span>উৎস</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="index.html#plants">কালেকশন</a></li>
+        <li><a href="tips.html">টিপস</a></li>
+      </ul>
+    </nav>
+
+    <section class="checkout-container">
+      <div class="checkout-card">
+        <div class="tabs-header">
+          <button class="tab-btn active" onclick="switchTab(event, 'buy')">
+            গাছ কিনুন
+          </button>
+          <button class="tab-btn" onclick="switchTab(event, 'review')">
+            রিভিউ দিন
+          </button>
+          <button class="tab-btn" onclick="switchTab(event, 'complaint')">
+            অভিযোগ করুন
+          </button>
+        </div>
+
+        <!-- অর্ডার সেকশন -->
+        <div id="buy" class="tab-content active">
+          <h2 style="margin-bottom: 20px; color: var(--primary)">
+            অর্ডার ডিটেইলস
+          </h2>
+          <form
+            onsubmit="
+              event.preventDefault();
+              alert('ধন্যবাদ! আপনার অর্ডারটি সফলভাবে জমা হয়েছে।');
+              location.href = 'index.html';
+            "
+          >
+            <div class="input-box">
+              <label>নির্বাচিত গাছ:</label>
+              <input
+                type="text"
+                id="plantName"
+                readonly
+                style="background: #f9f9f9"
+              />
+            </div>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px"
+            >
+              <div class="input-box">
+                <label>আপনার নাম:</label><input type="text" required />
+              </div>
+              <div class="input-box">
+                <label>মোবাইল নম্বর:</label><input type="tel" required />
+              </div>
+            </div>
+            <div class="input-box">
+              <label>ডেলিভারি ঠিকানা:</label
+              ><textarea rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">
+              অর্ডার সম্পন্ন করুন
+            </button>
+          </form>
+        </div>
+
+        <!-- রিভিউ সেকশন -->
+        <div id="review" class="tab-content">
+          <h2 style="margin-bottom: 20px; color: var(--primary)">
+            আপনার অভিজ্ঞতা শেয়ার করুন
+          </h2>
+          <form
+            onsubmit="
+              event.preventDefault();
+              alert('রিভিউ দেওয়ার জন্য ধন্যবাদ!');
+              switchTab(null, 'buy');
+            "
+          >
+            <div class="input-box">
+              <label>নাম:</label><input type="text" required />
+            </div>
+            <div class="input-box">
+              <label>রেটিং:</label>
+              <select>
+                <option>⭐⭐⭐⭐⭐ (চমৎকার)</option>
+                <option>⭐⭐⭐⭐ (ভালো)</option>
+                <option>⭐⭐⭐ (মোটামুটি)</option>
+              </select>
+            </div>
+            <div class="input-box">
+              <label>আপনার মন্তব্য:</label
+              ><textarea rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">রিভিউ জমা দিন</button>
+          </form>
+        </div>
+
+        <!-- অভিযোগ সেকশন -->
+        <div id="complaint" class="tab-content">
+          <h2 style="margin-bottom: 20px; color: #c0392b">অভিযোগ কেন্দ্র</h2>
+          <form
+            onsubmit="
+              event.preventDefault();
+              alert(
+                'আপনার অভিযোগটি গ্রহণ করা হয়েছে। আমরা শীঘ্রই যোগাযোগ করবো।',
+              );
+              switchTab(null, 'buy');
+            "
+          >
+            <div class="input-box">
+              <label>অর্ডার আইডি (যদি থাকে):</label><input type="text" />
+            </div>
+            <div class="input-box">
+              <label>সমস্যার বিবরণ:</label
+              ><textarea
+                rows="4"
+                required
+                placeholder="আপনার সমস্যার কথা বিস্তারিত লিখুন..."
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="btn-submit"
+              style="background: #c0392b"
+            >
+              জমা দিন
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; color: #666">
+      <p>&copy; ২০২৬ সবুজ এর উৎস - সকল স্বত্ব সংরক্ষিত।</p>
+    </footer>
+
+    <script>
+      // URL থেকে গাছের নাম নেওয়া
+      const params = new URLSearchParams(window.location.search);
+      const plant = params.get("plant");
+      if (plant) {
+        document.getElementById("plantName").value = plant;
+      }
+
+      // ট্যাব পরিবর্তনের ফাংশন
+      function switchTab(event, tabId) {
+        const contents = document.querySelectorAll(".tab-content");
+        const buttons = document.querySelectorAll(".tab-btn");
+
+        contents.forEach((content) => content.classList.remove("active"));
+        buttons.forEach((btn) => btn.classList.remove("active"));
+
+        document.getElementById(tabId).classList.add("active");
+        if (event) event.currentTarget.classList.add("active");
+        else
+          document
+            .querySelector(`[onclick*="${tabId}"]`)
+            .classList.add("active");
+      }
+    </script>
+  </body>
+</html>
