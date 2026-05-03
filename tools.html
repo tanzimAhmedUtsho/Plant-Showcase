@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>প্রয়োজনীয় সরঞ্জাম | সবুজ আবাহন</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;600&family=Poppins:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">সবুজ এর <span>উৎস</span></div>
+      <ul class="nav-links">
+        <li><a href="index.html">হোম</a></li>
+        <li><a href="index.html#plants">কালেকশন</a></li>
+        <li><a href="tools.html">সরঞ্জাম</a></li>
+        <li><a href="tips.html">টিপস</a></li>
+        <li><a href="startNowPage.html" class="nav-btn">শুরু করুন</a></li>
+      </ul>
+    </nav>
+
+    <section
+      class="hero-section"
+      style="
+        height: 40vh;
+        background: linear-gradient(135deg, #e8f5e9 0%, #ffffff 100%);
+      "
+    >
+      <div class="hero-text">
+        <h1>প্রয়োজনীয় <span>সরঞ্জাম</span></h1>
+        <p>আপনার বাগানের যত্নে সেরা মানের টুলস এবং এক্সেসরিজ।</p>
+      </div>
+    </section>
+
+    <section class="plant-container">
+      <div class="grid-layout">
+        <!-- Tool 1 -->
+        <div class="glass-card">
+          <img
+            src="/image/spray-bottle.jpg"
+            alt="Spray Bottle"
+            onerror="
+              this.src = 'https://via.placeholder.com/300x250?text=Spray+Bottle'
+            "
+          />
+          <div class="card-info">
+            <h3>ওয়াটার স্প্রে বোতল</h3>
+            <p>গাছে পানি স্প্রে করার জন্য আধুনিক ও মজবুত ডিজাইনের বোতল।</p>
+            <button
+              class="details-btn"
+              onclick="
+                openModal(
+                  'ওয়াটার স্প্রে বোতল',
+                  'এটি উচ্চমানের প্লাস্টিকের তৈরি। কুয়াশার মতো হালকা স্প্রে করতে এটি অতুলনীয়।',
+                  'https://via.placeholder.com/300x250?text=Spray+Bottle',
+                )
+              "
+            >
+              বিস্তারিত
+            </button>
+            <button
+              class="buy-btn"
+              onclick="
+                window.location.href = 'checkout.html?item=ওয়াটার স্প্রে বোতল'
+              "
+            >
+              এখনই কিনুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 2 -->
+        <div class="glass-card">
+          <img
+            src="/image/garden-trowel.jpg"
+            alt="Trowel"
+            onerror="
+              this.src =
+                'https://via.placeholder.com/300x250?text=Garden+Trowel'
+            "
+          />
+          <div class="card-info">
+            <h3>হ্যান্ড ট্রোয়েল</h3>
+            <p>মাটি খুঁড়া এবং গাছ লাগানোর জন্য মজবুত লোহার সরঞ্জাম।</p>
+            <button
+              class="details-btn"
+              onclick="
+                openModal(
+                  'হ্যান্ড ট্রোয়েল',
+                  'এর হাতলটি কাঠের তৈরি যা ধরতে খুব আরামদায়ক এবং দীর্ঘক্ষণ কাজ করা যায়।',
+                  'https://via.placeholder.com/300x250?text=Garden+Trowel',
+                )
+              "
+            >
+              বিস্তারিত
+            </button>
+            <button
+              class="buy-btn"
+              onclick="
+                window.location.href = 'checkout.html?item=হ্যান্ড ট্রোয়েল'
+              "
+            >
+              এখনই কিনুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 3 -->
+        <div class="glass-card">
+          <img
+            src="/image/potting-soil.jpg"
+            alt="Soil"
+            onerror="
+              this.src = 'https://via.placeholder.com/300x250?text=Potting+Soil'
+            "
+          />
+          <div class="card-info">
+            <h3>প্রিমিয়াম পটিং সয়েল</h3>
+            <p>
+              ইনডোর প্ল্যান্টের দ্রুত বৃদ্ধির জন্য বিশেষ পুষ্টিগুণ সম্পন্ন মাটি।
+            </p>
+            <button
+              class="details-btn"
+              onclick="
+                openModal(
+                  'পটিং সয়েল',
+                  'এতে কোকোপিট, ভার্মিকম্পোস্ট এবং পার্লাইট সঠিক অনুপাতে মেশানো রয়েছে।',
+                  'https://via.placeholder.com/300x250?text=Potting+Soil',
+                )
+              "
+            >
+              বিস্তারিত
+            </button>
+            <button
+              class="buy-btn"
+              onclick="window.location.href = 'checkout.html?item=পটিং সয়েল'"
+            >
+              এখনই কিনুন
+            </button>
+          </div>
+        </div>
+
+        <!-- Tool 4 -->
+        <div class="glass-card">
+          <img
+            src="/image/ceramic-pot.jpg"
+            alt="Pot"
+            onerror="
+              this.src = 'https://via.placeholder.com/300x250?text=Ceramic+Pot'
+            "
+          />
+          <div class="card-info">
+            <h3>আধুনিক সিরামিক টব</h3>
+            <p>আপনার ঘরকে সাজাতে নজরকাড়া ডিজাইনের সিরামিক টব।</p>
+            <button
+              class="details-btn"
+              onclick="
+                openModal(
+                  'সিরামিক টব',
+                  'এটি ড্রেনেজ হোল যুক্ত এবং যেকোনো ইনডোর প্ল্যান্টের জন্য উপযুক্ত।',
+                  'https://via.placeholder.com/300x250?text=Ceramic+Pot',
+                )
+              "
+            >
+              বিস্তারিত
+            </button>
+            <button
+              class="buy-btn"
+              onclick="window.location.href = 'checkout.html?item=সিরামিক টব'"
+            >
+              এখনই কিনুন
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- বিস্তারিত তথ্য দেখার মডাল (Modal) -->
+    <div id="plantModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modalImg" src="" alt="Item" />
+        <h2 id="modalTitle">আইটেমের নাম</h2>
+        <p id="modalDesc">বিস্তারিত তথ্য এখানে দেখানো হবে।</p>
+        <button class="buy-btn" onclick="closeModal()">বন্ধ করুন</button>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; ২০২৬ সবুজ এর উৎস - আপনার বাগান বন্ধু।</p>
+    </footer>
+
+    <script>
+      function openModal(title, desc, img) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalDesc").innerText = desc;
+        document.getElementById("modalImg").src = img;
+        document.getElementById("plantModal").style.display = "flex";
+      }
+      function closeModal() {
+        document.getElementById("plantModal").style.display = "none";
+      }
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("plantModal")) closeModal();
+      };
+    </script>
+  </body>
+</html>

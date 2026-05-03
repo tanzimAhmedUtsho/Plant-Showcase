@@ -161,7 +161,7 @@
             "
           >
             <div class="input-box">
-              <label>নির্বাচিত গাছ:</label>
+              <label>নির্বাচিত আইটেম:</label>
               <input
                 type="text"
                 id="plantName"
@@ -264,9 +264,10 @@
     <script>
       // URL থেকে গাছের নাম নেওয়া
       const params = new URLSearchParams(window.location.search);
-      const plant = params.get("plant");
-      if (plant) {
-        document.getElementById("plantName").value = plant;
+      const plant = params.get("plant") || params.get("item");
+      const itemNameInput = document.getElementById("plantName");
+      if (plant && itemNameInput) {
+        itemNameInput.value = plant;
       }
 
       // ট্যাব পরিবর্তনের ফাংশন
