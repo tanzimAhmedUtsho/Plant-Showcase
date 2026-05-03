@@ -220,21 +220,43 @@ body {
 }
 
 /* --- বাটন স্টাইল --- */
+.details-btn,
 .buy-btn {
   width: 100%;
-  padding: 12px;
-  border: 1.5px solid var(--primary);
-  background: transparent;
-  color: var(--primary);
+  padding: 10px 15px;
   border-radius: 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-family: "Hind Siliguri", sans-serif;
+  margin-bottom: 8px;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+}
+
+.details-btn {
+  background: #f0f7f4;
+  border: 1px solid var(--accent);
+  color: var(--primary);
+}
+
+.details-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+
+.buy-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
 }
 
 .buy-btn:hover {
-  background: var(--primary);
-  color: white;
+  background: var(--secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(45, 106, 79, 0.3);
 }
 
 /* --- ফুটার --- */
