@@ -94,6 +94,34 @@
         width: 100%;
         font-size: 16px;
       }
+      /* রিভিউ ডিসপ্লে স্টাইল */
+      .reviews-list {
+        margin-top: 40px;
+        border-top: 2px solid #eee;
+        padding-top: 20px;
+      }
+      .review-item {
+        background: #f9f9f9;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        border-left: 5px solid var(--primary);
+        animation: slideUp 0.3s ease;
+      }
+      .review-item h4 {
+        margin-bottom: 5px;
+        color: var(--primary);
+      }
+      .review-item .stars {
+        color: #ff7b00;
+        font-size: 14px;
+        margin-bottom: 8px;
+      }
+      .review-item p {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+      }
     </style>
   </head>
   <body>
@@ -166,19 +194,14 @@
           <h2 style="margin-bottom: 20px; color: var(--primary)">
             আপনার অভিজ্ঞতা শেয়ার করুন
           </h2>
-          <form
-            onsubmit="
-              event.preventDefault();
-              alert('রিভিউ দেওয়ার জন্য ধন্যবাদ!');
-              switchTab(null, 'buy');
-            "
-          >
+          <form id="reviewForm" onsubmit="addReview(event)">
             <div class="input-box">
-              <label>নাম:</label><input type="text" required />
+              <label>নাম:</label>
+              <input type="text" id="revName" required />
             </div>
             <div class="input-box">
               <label>রেটিং:</label>
-              <select>
+              <select id="revRating">
                 <option>⭐⭐⭐⭐⭐ (চমৎকার)</option>
                 <option>⭐⭐⭐⭐ (ভালো)</option>
                 <option>⭐⭐⭐ (মোটামুটি)</option>
@@ -186,10 +209,17 @@
             </div>
             <div class="input-box">
               <label>আপনার মন্তব্য:</label
-              ><textarea rows="3" required></textarea>
+              ><textarea id="revText" rows="3" required></textarea>
             </div>
             <button type="submit" class="btn-submit">রিভিউ জমা দিন</button>
           </form>
+
+          <div id="reviewsContainer" class="reviews-list">
+            <h3 style="margin-bottom: 15px; color: var(--primary)">
+              গ্রাহকদের মতামত
+            </h3>
+            <!-- এখানে নতুন রিভিউগুলো যুক্ত হবে -->
+          </div>
         </div>
 
         <!-- অভিযোগ সেকশন -->
@@ -253,6 +283,35 @@
           document
             .querySelector(`[onclick*="${tabId}"]`)
             .classList.add("active");
+      }
+
+      // রিভিউ যোগ করার নতুন ফাংশন
+      function addReview(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("revName").value;
+        const rating = document.getElementById("revRating").value;
+        const text = document.getElementById("revText").value;
+        const container = document.getElementById("reviewsContainer");
+
+        // নতুন রিভিউ এলিমেন্ট তৈরি
+        const reviewDiv = document.createElement("div");
+        reviewDiv.className = "review-item";
+        reviewDiv.innerHTML = `
+          <h4>${name}</h4>
+          <div class="stars">${rating}</div>
+          <p>${text}</p>
+        `;
+
+        // তালিকার শুরুতে নতুন রিভিউটি যোগ করা
+        container.insertBefore(
+          reviewDiv,
+          container.querySelector("h3").nextSibling,
+        );
+
+        // ফর্ম রিসেট করা
+        document.getElementById("reviewForm").reset();
+        alert("রিভিউ দেওয়ার জন্য ধন্যবাদ!");
       }
     </script>
   </body>
