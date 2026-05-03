@@ -317,6 +317,66 @@ body {
   color: var(--primary);
 }
 
+/* --- প্রিমিয়াম প্রোমো সেকশন --- */
+.promo-section {
+  padding: 40px 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  background: #f0f4f2;
+}
+
+.promo-card {
+  position: relative;
+  padding: 40px;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+}
+
+.promo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.promo-gradient {
+  background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
+  color: white;
+}
+
+.promo-dark {
+  background: #1b4332;
+  color: white;
+}
+
+.promo-tag {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px 15px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.promo-content h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.promo-link {
+  color: white;
+  text-decoration: underline;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 20px;
+}
+
 /* --- ফুটার --- */
 footer {
   text-align: center;
